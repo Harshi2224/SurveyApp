@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
-import { useAuth } from "../contexts/AuthContext"; // ⬅️ Add this import at the top
+import { useAuth } from "../contexts/AuthContext"; //  Add this import at the top
 
 
 export default function SurveyCreator() {
@@ -240,3 +240,4 @@ export default function SurveyCreator() {
     </div>
   );
 }
+
