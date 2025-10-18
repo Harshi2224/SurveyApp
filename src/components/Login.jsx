@@ -13,7 +13,6 @@ export default function Login() {
 
   const { login, signup } = useAuth();
 
-  // ✅ Helper function to find a user by email
   async function getUserByEmail(email) {
     const q = query(collection(db, "users"), where("email", "==", email));
     const snap = await getDocs(q);
@@ -30,16 +29,6 @@ export default function Login() {
 
     try {
 
-      /*if (!isLogin) {
-      const passwordRegex =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-      if (!passwordRegex.test(password)) {
-        throw new Error(
-          "Password must be at least 8 characters long, include uppercase, lowercase, number, and special character."
-        );
-      }
-    }*/
       if (isLogin) {
         const userDoc = await getUserByEmail(email);
 
@@ -174,3 +163,4 @@ export default function Login() {
     </div>
   );
 }
+
